@@ -1,0 +1,12 @@
+修改框架初始话时的默认数据库连接。
+
+修改app文件<如myapp.php>搜索：
+        if (!empty($config['db_dsn_pool'][$run_mode]))
+        {
+            $config['db_dsn_pool']['default'] = $config['db_dsn_pool'][$run_mode];
+        }
+将其改为：
+        if (!empty($config['db_dsn_pool'][$run_mode])) {
+            $config['db_dsn_pool']['default'] = getDbConfig();
+            $config['db_dsn_pool']['write'] = getDbConfig(null,false);;
+        }
