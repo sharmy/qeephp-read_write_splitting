@@ -12,3 +12,4 @@ qeephp本身没有读写分离的机制，所以需要自己来完成。
 2) 重载model层<readwrite.php>
 3) 修改框架app数据库初始化工作<参见dsn.init.txt>。
 4) 修改需要使用读写分离的model类，继承我们的读写分离类<参见mymodel.php>。
+5) MySQL数据库配置文件见database.yaml.php
